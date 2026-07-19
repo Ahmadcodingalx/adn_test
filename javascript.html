@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cours Flash JavaScript</title>
+</head>
+<body>
+  <h1>Démo JavaScript</h1>
+  
+  <p id="message">Clique sur le bouton pour voir la magie ✨</p>
+  
+  <button id="btn">Clique-moi</button>
+  
+  <script>
+    // Variables
+    let prenom = "Ahmad";
+    const age = 25;
+
+    // Fonction
+    function saluer(nom) {
+      return "Bonjour " + nom + " !";
+    }
+
+    // Condition
+    if (age >= 18) {
+      console.log("Tu es adulte.");
+    } else {
+      console.log("Tu es mineur.");
+    }
+
+    // Boucle
+    for (let i = 0; i < 3; i++) {
+      console.log("Compteur : " + i);
+    }
+
+    // Manipulation du DOM
+    document.getElementById("btn").addEventListener("click", function() {
+      document.getElementById("message").textContent = saluer(prenom);
+    });
+  </script>
+</body>
+</html>
