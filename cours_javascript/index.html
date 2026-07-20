@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp_js</title>
+</head>
+
+<body>
+    <button id="test">Clique ici⏬</button>
+    <div id="message"></div>
+    <script>
+        function ad() {
+            const prenom = "Marie"
+            return "Bonjour " + prenom
+        }
+
+
+        document.getElementById("test").addEventListener("click", function (){ 
+            document.getElementById("message").innerHTML = ad()
+     })
+    </script>
+
+</body>
+
+</html>
