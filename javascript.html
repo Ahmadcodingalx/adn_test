@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <title>Cours Flash JavaScript</title>
 </head>
+
 <body>
   <h1>Démo JavaScript</h1>
-  
+
   <p id="message">Clique sur le bouton pour voir la magie ✨</p>
-  
+
   <button id="btn">Clique-moi</button>
-  
+
   <script>
     // Variables
-    let prenom = "Ahmad";
-    const age = 25;
+    let prenom = "";
+    let age = null;
 
     // Fonction
-    function saluer(nom) {
-      return "Bonjour " + nom + " !";
+    function saluer(nom, monAge) {
+      const message = "Bonjour " + nom + ", j'ai " + monAge + " ans";
+      let status = '';
+
+      if (monAge >= 18) {
+        status = "Je suis adulte"
+      } else {
+        status = "Je suis mineur"
+      }
+
+      return message + " Donc " + status;
     }
 
     // Condition
-    if (age >= 18) {
-      console.log("Tu es adulte.");
-    } else {
-      console.log("Tu es mineur.");
-    }
+    // if (age >= 18) {
+    //   console.log("Tu es adulte.");
+    // } else {
+    //   console.log("Tu es mineur.");
+    // }
 
     // Boucle
     for (let i = 0; i < 3; i++) {
       console.log("Compteur : " + i);
+      // i+2
+    }
+
+    let i = 10;
+
+    do {
+      console.log("Compteur : " + i);
+      i++
+    } while (i < 5);
+
+    while (i < 5) {
+      console.log("Tu es mineur.");
+      i++
+    }
+
+    while (age < 18) {
+      console.log("Tu es mineur.");
+      break;
     }
 
     // Manipulation du DOM
-    document.getElementById("btn").addEventListener("click", function() {
-      document.getElementById("message").textContent = saluer(prenom);
+    document.getElementById("btn").addEventListener("click", function () {
+
+      prenom = prompt('Entrez votre nom !')
+      age = prompt('Entrez votre âge')
+
+      document.getElementById("message").textContent = saluer(prenom, age);
     });
   </script>
 </body>
+
 </html>
